@@ -15,8 +15,8 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->longText('description');
-            $table->text('short_des');
+            $table->longText('description')->comment('long description of the site (for about us page)');
+            $table->text('short_des')->comment('short description of the site (for footer)');
             $table->string('logo');
             $table->string('photo');
             $table->string('address');

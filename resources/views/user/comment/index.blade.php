@@ -41,10 +41,10 @@
             @foreach($comments as $comment)
                 <tr>
                     <td>{{$comment->id}}</td>
-                    <td>{{$comment->user_info['name']}}</td>
-                    <td>{{$comment->post->title}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$comment->post_title}}</td>
                     <td>{{$comment->comment}}</td>
-                    <td>{{$comment->created_at->format('M d D, Y g: i a')}}</td>
+                    <td>{{date('M d D, Y g: i a', strtotime($comment->created_at))}}</td>
                     <td>
                         @if($comment->status=='active')
                           <span class="badge badge-success">{{$comment->status}}</span>

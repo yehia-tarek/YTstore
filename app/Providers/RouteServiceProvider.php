@@ -46,7 +46,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapAdminRoutes();
+
+        $this->mapUserDashboardRoutes();
     }
 
     /**
@@ -61,6 +63,36 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes are typically stateful and are protected by the 'admin' middleware.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::middleware(['web','auth', 'admin'])
+            ->namespace($this->namespace)
+            ->prefix('admin')
+            ->group(base_path('routes/admin.php'));
+    }
+
+        /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes are typically stateful and are protected by the 'admin' middleware.
+     *
+     * @return void
+     */
+    protected function mapUserDashboardRoutes()
+    {
+        Route::middleware(['web','auth', 'user'])
+            ->namespace($this->namespace)
+            ->prefix('user')
+            ->group(base_path('routes/userDashboard.php'));
     }
 
     /**

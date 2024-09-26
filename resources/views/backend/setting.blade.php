@@ -3,21 +3,21 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Post</h5>
+    <h5 class="card-header">Settings</h5>
     <div class="card-body">
     <form method="post" action="{{route('settings.update')}}">
-        @csrf 
+        @csrf
         {{-- @method('PATCH') --}}
         {{-- {{dd($data)}} --}}
         <div class="form-group">
-          <label for="short_des" class="col-form-label">Short Description <span class="text-danger">*</span></label>
+          <label for="short_des" class="col-form-label">Short Description ( For Footer )<span class="text-danger">*</span></label>
           <textarea class="form-control" id="quote" name="short_des">{{$data->short_des}}</textarea>
           @error('short_des')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group">
-          <label for="description" class="col-form-label">Description <span class="text-danger">*</span></label>
+          <label for="description" class="col-form-label">Description ( For About Page )<span class="text-danger">*</span></label>
           <textarea class="form-control" id="description" name="description">{{$data->description}}</textarea>
           @error('description')
           <span class="text-danger">{{$message}}</span>

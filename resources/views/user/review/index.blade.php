@@ -43,8 +43,9 @@
             @foreach($reviews as $review)
                 <tr>
                     <td>{{$review->id}}</td>
-                    <td>{{$review->user_info['name']}}</td>
-                    <td>{{$review->product->title}}</td>
+                    {{-- <td>{{$review->user_info['name']}}</td> --}}
+                    <td>{{$user->name}}</td>
+                    <td>{{$review->product_name}}</td>
                     <td>{{$review->review}}</td>
                     <td>
                      <ul style="list-style:none" class="d-flex">
@@ -57,7 +58,7 @@
                         @endfor
                      </ul>
                     </td>
-                    <td>{{$review->created_at->format('M d D, Y g: i a')}}</td>
+                    <td>{{date('M d D, Y g:i a', strtotime($review->created_at))}}</td>
                     <td>
                         @if($review->status=='active')
                           <span class="badge badge-success">{{$review->status}}</span>

@@ -51,7 +51,7 @@
                     <td>{{$category->slug}}</td>
                     <td>{{(($category->is_parent==1)? 'Yes': 'No')}}</td>
                     <td>
-                        {{$category->parent_info->title ?? ''}}
+                        {{$category->parent_title ?? ''}}
                     </td>
                     <td>
                         @if($category->photo)

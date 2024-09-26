@@ -11,6 +11,7 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/socialite": "^5.6",
+        "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
         "pusher/pusher-php-server": "^7.2",
@@ -33,7 +34,10 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Touhidurabir\\Filterable\\": "packages/laravel-filterable/src/"
-        }
+        },
+        "files":[
+            "app/Helpers/Functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
